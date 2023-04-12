@@ -1,0 +1,67 @@
+<html>
+  <style>
+    body{ 
+      background-color: white;
+      font-size: 20pt;
+      font-family: Candara;
+    }
+  .card {
+     backdrop-filter: blur(16px) saturate(180%);
+     -webkit-backdrop-filter: blur(16px) saturate(180%);
+     background-color: rgba(150, 255, 255, 0.75);
+     border-radius: 12px;
+     border: 1px solid rgba(209, 213, 219, 0.3);
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin-right: -50%;
+     transform: translate(-50%, -50%) 
+  }
+  .bg {
+    /* The image used */
+    display: flex;
+    background-image: url("https://media.cntraveler.com/photos/612e9ac0ffb6ea47e575e0b9/16:9/w_2560%2Cc_limit/Train%2520Travel%2520Packages%2520From%2520Amtrak_CoastStarlight.jpg");
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  </style>
+
+<body>
+  <div class="bg">
+  <div class = "card">
+  <h1><center>Isaac And Yuya's Train System</center></h1>
+  <h2><center>Login or Register to start your journey!</center></h2>
+
+  <!--
+  <center><img src="{{url_for('static', filename='amtrak.jpeg')}}"/></center>
+  -->
+  
+  <form method="GET" action="/log_in">
+    <p><center>Login<input type="text" name="login" required=true> <input type="submit" value="Login"></center></p>
+  </form>
+
+  <form method="POST" action="/register">
+    <p><center>Register<input type="text" name="register"> <input type="submit" value="Register"></center></p>
+  </form>
+
+
+  <div>
+    <center>
+    {% for n in data %}
+    <div>{{n}}</div>
+    {% endfor %}
+    </center>
+  </div>
+  <p><center>{{msg}}</center></p>
+</div>
+</div>
+</body>
+
+
+
+</html>

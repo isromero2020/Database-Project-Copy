@@ -1,0 +1,35 @@
+<html>
+  <style>
+    body{ 
+      background-color: rgb(163, 203, 221);
+      font-size: 20pt;
+      font-family: Lato;
+    }
+    body {
+    background-image: url('https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/blog/amtrak-zoom-virtual-backgrounds-locomotive.png/_jcr_content/renditions/cq5dam.web.1920.1080.png');
+    background-position: center;
+    }
+
+/* Glassmorphism card effect */
+  .card {
+     backdrop-filter: blur(16px) saturate(180%);
+     -webkit-backdrop-filter: blur(16px) saturate(180%);
+     background-color: rgba(255, 255, 255, 0.75);
+     border-radius: 12px;
+     border: 1px solid rgba(209, 213, 219, 0.3);
+  }
+
+  </style>
+
+<body>
+    <div class="card">
+    <h1><center>Booking Confirmed</center></h1>
+    <h2><center>Thank you for choosing us!❤️</center></h2>
+    <h3><center>Your ticket number is {{ticketid}}</center></h3>
+    <br><h3><center>Your new balance is {{balance}}</center></h3>
+
+    <p><center>Please Log Out Now</center></p>
+    <p><center><a href="/" font-size= "3">Log Out</a></center></p>
+    </div>
+</body>
+</html>

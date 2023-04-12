@@ -1,0 +1,61 @@
+<html>
+  <style>
+    body{ 
+      background-color: rgb(163, 203, 221);
+      font-size: 15pt;
+      font-family: arial;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
+
+
+<body>
+  <h1><center>Search your Amtrak ride!</center></h1>
+  <!--<div>{{data}}</div>-->
+
+<p><center><a href="/log_in?login=yuya">Go back to main page</a></center></p>
+<p><center><a href="/booking">Book a new trip now!</a></center></p>
+
+<form method="GET" action="/lookup">
+<!--<p><center>Look up your Amtrak ride: <input type="text" name="userid"> <input type="submit" value="Search"></center></p>-->
+</form>
+
+<center>
+<table>
+
+    <!--{% if data %}-->
+
+    <th>ticket id</th>
+    <th>origin id</th>
+    <th>destination id</th>
+    <th>line</th>
+    <th>date</th>
+    <th>price</th>
+    {% for ticket in data %}
+        <tr>
+            <td>{{ticket[0]}}</td>
+            <td>{{ticket[3]}}</td>
+            <td>{{ticket[4]}}</td>
+            <td>{{ticket[6]}}</td>
+            <td>{{ticket[5]}}</td>
+            <td>{{ticket[1]}}</td>
+        </tr>
+    {% endfor %}
+
+</table>    
+</center>
+
+<!--
+<div>
+    {% for n in data %}
+    <div><center>{{n}}</center></div>
+    {% endfor %}
+</div>
+-->
+
+</body>
+
+
+</html>

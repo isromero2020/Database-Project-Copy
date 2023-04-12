@@ -1,0 +1,74 @@
+<html>
+  <style>
+    body{ 
+      background-color: rgb(163, 203, 221);
+      font-size: 20pt;
+      font-family: Lato;
+    }
+  </style>
+
+
+<body>
+
+  <h1><center>Book Here!</center></h1>
+
+  <h4 fontSize="12"><em>Search for available tickets using the form below</em></h4>
+
+  <!--ticket lookup drop down menu-->
+  <form method="GET" action="/ticketLookup">
+    <!--Select origin via dropdown list-->
+    <label for="origin-select">Choose a start point:</label>
+    <select name="origin-select" required=true>
+      <option value="">--Please choose an option--</option>
+      <option value="NYP">NYP - New York, NY</option>
+      <option value="NFL">NFL - Niagra Falls, NY</option>
+      <option value="CHI">CHI- Chicago, IL</option>
+      <option value="BOS">BOS - Boston, MA</option>
+      <option value="LAX">LAX - Los Angeles, CA</option>
+      <option value="NHV">NHV - New Haven, CT</option>
+      <option value="WAS">WAS - Washington, DC</option>
+      <option value="EMY">EMY - Emeryville, CA</option>
+      <option value="SEA">SEA - Seattle, WA</option>
+      <option value="BRK">BRK - Brunswick, ME</option>
+      <option value="SAS">SAS - San Antonio, TX</option>
+      <option value="PIT">PIT - Pittsfield, MA</option>
+    </select><br>
+    <!--Select destination via dropdown list-->
+    <label for="dest-select">Choose a destination:</label>
+    <select name="dest-select" required=true>
+      <option value="">--Please choose an option--</option>
+      <option value="NYP">NYP - New York, NY</option>
+      <option value="NFL">NFL - Niagra Falls, NY</option>
+      <option value="CHI">CHI- Chicago, IL</option>
+      <option value="BOS">BOS - Boston, MA</option>
+      <option value="LAX">LAX - Los Angeles, CA</option>
+      <option value="NHV">NHV - New Haven, CT</option>
+      <option value="WAS">WAS - Washington, DC</option>
+      <option value="EMY">EMY - Emeryville, CA</option>
+      <option value="SEA">SEA - Seattle, WA</option>
+      <option value="BRK">BRK - Brunswick, ME</option>
+      <option value="SAS">SAS - San Antonio, TX</option>
+      <option value="PIT">PIT - Pittsfield, MA</option>
+    </select><br>
+    <!--select date-->
+    <label for="departtime">Departure Date(Will search trips on and after date)</label>
+    <input type="date" id="departtime" name="departtime" required=true>
+    <br>
+    <input type="submit" value="Find Tickets">
+  </form>
+
+  <div>
+    <center>
+    {% for n in data %}
+    <div>{{n}}</div>
+    {% endfor %}
+  </center>
+  </div>
+
+  <form>
+    <input type="button" value="Go back my Main Page" onclick="history.back()">
+  </form>
+  <p><center><a href="/" font-size= "3">Log Out</a></center></p>
+
+  </body>
+</html>

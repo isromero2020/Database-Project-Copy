@@ -1,0 +1,47 @@
+<html>
+  <style>
+    body{ 
+      background-color: rgb(163, 203, 221);
+      font-size: 15pt;
+      font-family: arial;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
+
+
+  <body>
+  <h1><center>Available Tickets</center></h1>
+  <div>
+    <center>
+      <table>
+          <th>Ticket ID</th>
+          <th>Price</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Departure Time</th>
+          <th>Line</th>
+          <th>Select Ticket</th>
+          {% for ticket in data %}
+          <form method="POST" action="/confirmation">
+              <tr>
+                  <td><input type="hidden" name="ticketId" value="{{ticket.ticket_id}}">{{ticket.ticket_id}}</td>
+                  <td><input type="hidden" name="price" value="{{ticket.price}}">{{ticket[1]}}</td>
+                  <td>{{ticket[3]}}</td>
+                  <td>{{ticket[4]}}</td>
+                  <td>{{ticket[5]}}</td>
+                  <td>{{ticket[6]}}</td>
+                  <td><input type = "submit" value = "Select!"></td>
+              </tr>
+          </form>
+
+          {% endfor %}
+      </table>    
+    </center>
+    </div>
+    <h5><center>{{msg}}</center></h5>
+    <h5><center><img src={{img}} alt="Image"></center></h5>
+    <p><center><a href="/" font-size= "3">Log Out</a></center></p>
+  </body>
+<html>

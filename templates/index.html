@@ -1,0 +1,99 @@
+<html>
+  <style>
+    body{ 
+      background-color: rgb(163, 203, 221);
+      font-size: 20pt;
+      font-family: Lato;
+    }
+    table, th, td {
+      border: 1px solid rgb(236, 65, 65);
+      font-
+    }
+  </style>
+
+
+<body>
+  <h1><center>Isaac And Yuya's Train System</center></h1>
+  
+  <h2><center>Your current tickets</center></h2>
+
+
+
+  <center>
+    <table>
+        <th>Ticket id</th>
+        <th>Origin id</th>
+        <th>Destination id</th>
+        <th>Line</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Cancel Booking</th>
+        {% for ticket in data %}
+
+        <form method="POST" action="/cancelBooking">  
+          <tr>
+                <td><input type="hidden" name="ticketId" value="{{ticket.ticket_id}}">{{ticket[0]}}</td>
+                <td>{{ticket[3]}}</td>
+                <td>{{ticket[4]}}</td>
+                <td>{{ticket[6]}}</td>
+                <td>{{ticket[5]}}</td>
+                <td><input type="hidden" name="price" value="{{ticket.price}}">{{ticket[1]}}</td>
+                <td><input type = "submit" value = "Cancel"></td>
+            </tr>
+        </form>
+
+        {% endfor %}
+    
+    </table>    
+    </center>
+
+    <p><center>{{msg}}</center></p>
+  
+
+  <h2><center>Your current balance:</center></h2>
+  <p><center>${{balance}}</center></p>
+
+
+  <h2><center>Add balance to your account</center></h2>
+  <!--<form method="POST" action="/addbalance">
+    <p><center><input type="text" name="addbalance"> <input type="submit" value="Pay"></center></p>
+  </form>-->
+
+
+  <form method="POST" action="/pay">
+    <center>
+    <label>Amount</label><br>
+    <input type="number" name="amount" required=true><br>
+    <label>UserID</label><br>
+    <input type="text" name="userid" required=true><br><br>
+    <input type="submit" value="Pay">
+    </center>
+  </form>
+  
+
+  <!--
+  <div>
+    <div><center>${{data[0]}}</center></div>
+  </div>
+-->
+
+
+<!--<p><a href="another">Go to the other page</a></p>-->
+<!--<p><center><a href="search">Look up your Amtrak ride now!</a></center></p>-->
+<p><center><a href="booking">Book a trip!</a></center></p>
+<p><center><a href="/">Logout</a></center></p>
+
+<!--
+<form method="POST" action="/add">
+<p><center>Login<input type="text" name="name"> <input type="submit" value="Login"></center></p>
+</form>
+-->
+
+
+
+
+
+</body>
+
+
+</html>
